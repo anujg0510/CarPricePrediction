@@ -9,7 +9,7 @@ Involves the following steps:
   - Feature selection
   - Model building
   - Hyperparameter tuning
-  - Model testing and deployment
+  - Model testing and exporting into pickle file
 
 2. HTML front end development using a simple index.html page
 
