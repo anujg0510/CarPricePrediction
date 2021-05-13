@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="color:black" >
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Predictive analysis</h2>
+            <h3>Year</h3><input id="first" name="Year" type="number ">
+            <h3>Ex-Showroom Price? (In lakhs)</h3><br><input id="second" name="Present_Price" required="required">
+            <h3>Total Mileage?</h3><input id="third" name="Kms_Driven" required="required">
+            <h3>Number of seats?</h3><input id="seat" name="Seats" required="required">
+            <h3>How many owners so far?</h3><br><select id="fourth" name="Owner" required="required">
+                <option value="FirstOwner">First Owner</option>
+                <option value="SecondOwner">Second Owner</option>
+                <option value="ThirdOwner">Third Owner</option>
+                <option value="FourthOwner">Fourth Owner</option>
+                <option value="TestDriveCar">TestCar</option>
+            </select>
+            <h3>What Is the Fuel type?</h3><br><select id="fuel" name="Fuel_Type" required="required">
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="CNG">CNG</option>
+                <option value="LPG">LPG</option>
+            </select>
+            <h3>Are you A Dealer or Individual</h3><br><select name="Seller_Type" id="seller" required="required">
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+                <option value="Trustmark">Trustmark Dealer</option>
+            </select>
+            <h3>Transmission type</h3><br><select name="Transmission_Mannual" id="trans" required="required">
+                <option value="Manual">Manual</option>
+                <option value="Automatic">Automatic</option>
+            </select>
+            <br><br><button id="sub" type="submit ">Calculate the Selling Price</button>
+            <br>
+
+        </form>
+
+        <br><br><h3>{{ prediction_text }}<h3>
+    </div>
+
+
+
+
+    <style>
+        body {
+            background-color: white;
+            text-align: left;
+            padding: 10 px;
+        }
+
+        #trans {
+            font-size: 12px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+
+        #fuel {
+            width: 150px;
+            height: 30px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 12px;
+        }
+
+        #fuel:hover {
+            background-color: coral;
+        }
+
+        #research {
+            width: 150px;
+            height: 30px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 12px;
+        }
+
+        #trans:hover {
+            background-color: coral;
+        }
+
+        #seller {
+            width: 150px;
+            height: 30px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 12px;
+        }
+
+        #seller:hover {
+            background-color: coral;
+        }
+
+        #sub {
+            width: 150px;
+            height: 30px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 12px;
+        }
+
+        #sub:hover {
+            background-color: darkcyan;
+        }
+
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        #fourth {
+            border-radius: 14px;
+            height: 30px;
+            font-size: 12px;
+            text-align: center;
+        }
+    </style>
+</body>
+
+</html>
